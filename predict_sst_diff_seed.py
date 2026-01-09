@@ -3,7 +3,7 @@ import argparse
 import numpy as np
 import pandas as pd
 from sklearn.metrics import accuracy_score, roc_auc_score,f1_score, ndcg_score, recall_score
-from evaluation import evaluate_model, evaluate_model_performance_and_naive_fairness_fast, evaluation_gender
+from evaluation import evaluation_gender
 from sklearn.model_selection import train_test_split 
 import os
 import copy
