@@ -92,3 +92,14 @@ def evaluate_model_performance_and_naive_fairness_fast_rmse(model, df_val, df_se
         rmse_result = rooted_mean_squared_error(y_true_all, y_pred_all)
     return rmse_result, naive_gender_unfairness
 
+def evaluation_gender_new(data, label, model):
+    # for drfo caculate gamma
+    model.eval()
+    pred = model(data)
+    pred_out = pred.argmax(1)
+    gammas = {}
+    acc = round(sum(pred_out == label).item()/(pred_out.shape[0]) * 100, 2)
+    gammas[0] = 1 - accuracy_score(pred_out[label == 0].cpu().numpy(), label[label == 0].cpu().numpy())
+    gammas[1] = 1 - accuracy_score(pred_out[label == 1].cpu().numpy(), label[label == 1].cpu().numpy())
+        
+    return acc, gammas 
