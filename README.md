@@ -5,7 +5,7 @@
 - `./datasets` : Here are the processed **ML-1M** and **LastFM-360K** datasets.
 - `./pretrained_model` : Here are the pretrained **ML-1M** and **LastFM-360K** MF models. (No fair regularization)
 - `./scripts` : Here are the training scripts.
-- `./collaborative_models.py`: Recommendation model。
+- `./collaborative_models.py`: Recommendation model.
 - `./MF_DP_fairness.py`: For MF pretraining.
 - `./predict_sst_diff_seed.py` : Reconstruction of sensitive attributes using multiple priors.
 - `./mpr.py` : Use MPR for fairness training.
